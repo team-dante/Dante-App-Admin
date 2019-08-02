@@ -1,0 +1,11 @@
+.task {
+    padding: 1.4em;
+    margin-bottom: 20px;
+    background-color: #f5f6f7;
+    border-radius: 20px;
+    border: 1px solid #ededed;
+}
+
+Input, Button {
+    margin-bottom: 10px;
+}
