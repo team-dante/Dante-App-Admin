@@ -9,6 +9,8 @@ import SetPrivateState from './SetPrivateState';
 import CreateStaffAcct from './CreateStaffAcct';
 import DeleteAcct from './DeleteAcct';
 import AddTimeSlots from './AddTimeSlots';
+import ChangeRoomProps from './ChangeRoomProps';
+import ChangeStaffLocation from './ChangeStaffLocation';
 
 class App extends Component {
     componentDidMount() {
@@ -27,25 +29,33 @@ class App extends Component {
             <Container>
                 <h3>Database Maintenance</h3>
                     <Row>
-                        <Col xs="6">
-                            <CleanDatabase />
-                        </Col>
-                        <Col xs="6">
-                            <SetPrivateState />
-                        </Col>
+                      <Col xs="6">
+                        <CleanDatabase />
+                      </Col>
+                      <Col xs="6">
+                        <SetPrivateState />
+                      </Col>
                     </Row>
                     <Row>
-                        <Col xs="6">
-                            <CreateStaffAcct />
-                        </Col>
-                        <Col xs="6">
-                            <DeleteAcct />
-                        </Col>
+                      <Col xs="6">
+                        <CreateStaffAcct />
+                      </Col>
+                      <Col xs="6">
+                        <DeleteAcct />
+                      </Col>
                     </Row>
                     <Row>
-                        <Col xs="6">
-                            <AddTimeSlots />
-                        </Col>
+                      <Col xs="6">
+                        <AddTimeSlots />
+                      </Col>
+                      <Col xs="6">
+                        <ChangeRoomProps />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs="6">
+                        <ChangeStaffLocation />
+                      </Col>
                     </Row>
             </Container>
         );
