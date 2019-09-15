@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export default class AddTimeSlots extends Component {
 
-    state = {patientPhoneNum: '', room: '', date: '', startTime: '', endTime: ''};
+    state = {patientPhoneNum: '', date: '', room: '',  startTime: '', endTime: ''};
 
     addTimeObj() {
         var self = this;
@@ -15,16 +15,14 @@ export default class AddTimeSlots extends Component {
         let momentStrEndTime = this.state.date + ' ' + this.state.endTime;
         let tsEnd = moment(momentStrEndTime, "YYYY-MM-DD hh:mm").unix();
 
-        let diff = tsEnd - tsStart;
-
         firebase.database().ref(`/PatientVisitsByDates/${this.state.patientPhoneNum}/${this.state.date}`).push({
             endTime: tsEnd,
             room: self.state.room,
-            startTime: tsStart,
-            timeElapsed: diff
+            inSession: false,
+            startTime: tsStart
         }).then(() => {
             alert("Push data successfully");
-            self.setState({patientPhoneNum: '', room: '', date: '', startTime: '', endTime: ''});
+            // self.setState({patientPhoneNum: '', room: '', date: '', startTime: '', endTime: ''});
         })
     }
 

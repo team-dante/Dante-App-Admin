@@ -13,7 +13,7 @@ export default class CleanDatabase extends Component {
             snapshot.forEach(function (date) {
                 date.forEach(function (obj){
                     obj.forEach(function (timeSlot){
-                        if (timeSlot.val().timeElapsed <= parseInt(secs)) {
+                        if (timeSlot.val().endTime - timeSlot.val().startTime <= parseInt(secs)) {
                            timeSlot.ref.remove();
                         }
                     })

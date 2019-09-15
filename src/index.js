@@ -11,6 +11,7 @@ import DeleteAcct from './DeleteAcct';
 import AddTimeSlots from './AddTimeSlots';
 import ChangeRoomProps from './ChangeRoomProps';
 import ChangeStaffLocation from './ChangeStaffLocation';
+import RemoveInSessionUser from "./RemoveInSessionUser";
 
 class App extends Component {
     componentDidMount() {
@@ -55,6 +56,9 @@ class App extends Component {
                     <Row>
                       <Col xs="6">
                         <ChangeStaffLocation />
+                      </Col>
+                      <Col xs="6">
+                        <RemoveInSessionUser />
                       </Col>
                     </Row>
             </Container>
